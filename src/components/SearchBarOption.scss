@@ -1,0 +1,48 @@
+.search-bar_option {
+  min-height: 90px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EDF4F7;
+  gap: 10px;
+  .search-bar_option_image {
+    flex: 1 1 20%;
+    max-width: 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+    }
+  }
+  .search-bar_option_about {
+    flex: 1 1 50%;
+    text-align: start;
+    p {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      margin: 0;
+      &:last-child {
+        font-weight: normal;
+        font-size: 13px;
+        color: #8FA7BD;
+      }
+    }
+  }
+  .search-bar_option_price {
+    flex: 1 1 30%;
+    p{
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 23px;
+      line-height: 32px;
+      color: #37AD94;
+    }
+  }
+}

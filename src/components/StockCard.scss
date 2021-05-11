@@ -1,0 +1,55 @@
+.stock-card {
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stock-card_company-name {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 32px;
+  color: #00264C;
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+.stock-card_industry {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 30px;
+  color: #728BA3;
+  margin: 0;
+}
+
+.stock-card_price_amount {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 40px;
+  color: #00264C;
+  margin: 20px 0 0 0;
+}
+.stock-card_price_chage {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #37AD94;
+}
+.stock-card_price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}

@@ -1,0 +1,45 @@
+ const getStocks = () => {
+      let res = []
+
+      if (buff === event.target.value) {
+        fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=${event.target.value}&region=US`, {
+          "method": "GET",
+          "headers": {
+            "x-rapidapi-key": "475c6613d4msh58b25f686d1eb11p13762cjsn17040f8be93a",
+            "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+          }
+        })
+        .then(response => {
+          return response.json()
+        })
+        .then ( async(data) => {
+          const itemDetails = async() => {
+            for(const item of data.quotes) {
+              console.log(item);
+              await fetch(`https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/get-detail?symbol=${item.symbol}&region=US`, {
+                "method": "GET",
+                "headers": {
+                  "x-rapidapi-key": "475c6613d4msh58b25f686d1eb11p13762cjsn17040f8be93a",
+                  "x-rapidapi-host": "apidojo-yahoo-finance-v1.p.rapidapi.com"
+                }
+              })
+              .then(res => res.json())
+              .then(data => {
+                item.price = data.price;
+                item.summaryProfile = data.summaryProfile;
+              });
+            }
+          }
+
+          await itemDetails();
+          console.log(data.quotes);
+          setSearchRes(data.quotes);
+        })
+        .catch(err => {
+          console.error(err);
+        });
+      }
+    }
+
+    setTimeout(getStocks, 3000);
+  }
